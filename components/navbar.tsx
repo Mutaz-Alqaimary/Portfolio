@@ -94,6 +94,7 @@ export function Navbar() {
         {open ? (
           <motion.div
             key="mobile-menu"
+            ref={menuRef as RefObject<HTMLDivElement>}
             initial={{ opacity: 0, y: menuOffset, scale: shouldReduceMotion ? 1 : 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: menuOffset, scale: shouldReduceMotion ? 1 : 0.98 }}
@@ -102,7 +103,6 @@ export function Navbar() {
           >
             {navItems.map((item, index) => (
               <motion.div
-                ref={menuRef as RefObject<HTMLDivElement>}
                 key={item.href}
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : -4 }}
                 animate={{ opacity: 1, y: 0 }}

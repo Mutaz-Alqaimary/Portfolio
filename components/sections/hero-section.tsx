@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { LinkButton } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { fadeUp, stagger } from "@/lib/motion";
+import Link from "next/link";
 
 const HeroScene = dynamic(() => import("@/components/3d/hero-scene").then((mod) => mod.HeroScene), {
   ssr: false,
@@ -14,13 +15,13 @@ const HeroScene = dynamic(() => import("@/components/3d/hero-scene").then((mod) 
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-[100svh] overflow-hidden">
+    <section id="home" className="relative min-h-svh overflow-hidden">
       <div className="absolute inset-0">
         <HeroScene />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/30 to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/30 to-background" />
       <motion.div
-        className="container relative z-10 flex min-h-[100svh] max-w-5xl flex-col items-start justify-center pb-24 pt-28 sm:pt-32"
+        className="container relative z-10 flex min-h-svh max-w-5xl flex-col items-start justify-center pb-24 pt-28 sm:pt-32"
         variants={stagger}
         initial="hidden"
         animate="visible"
@@ -40,20 +41,20 @@ export function HeroSection() {
             <LinkButton href="#projects">View projects</LinkButton>
           </MagneticButton>
           <MagneticButton>
-            <LinkButton href="https://github.com/example" variant="secondary" aria-label="Open GitHub profile">
+            <LinkButton href="https://github.com/Mutaz-Alqaimary" target="_blank" variant="secondary" aria-label="Open GitHub profile">
               <Code2 className="size-4" />
               GitHub
             </LinkButton>
           </MagneticButton>
         </motion.div>
       </motion.div>
-      <a
+      <Link
         href="#about"
         aria-label="Scroll to about section"
         className="absolute bottom-5 left-1/2 z-10 grid size-11 -translate-x-1/2 place-items-center rounded-2xl border border-border bg-card/75 text-muted-foreground backdrop-blur transition hover:text-primary sm:bottom-8 sm:size-12"
       >
         <ArrowDown className="size-5 animate-bounce" />
-      </a>
+      </Link>
     </section>
   );
 }
