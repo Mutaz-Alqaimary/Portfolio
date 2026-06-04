@@ -12,8 +12,8 @@ export function SkillsSection() {
     <section id="skills" className="container py-16 sm:py-24 lg:py-32">
       <SectionHeading
         eyebrow="Skills"
-        title="A toolkit tuned for expressive, durable products."
-        description="Strong fundamentals across UI engineering, animation, state, validation, performance, and design-system delivery."
+        title="Skills I am actively building through practice"
+        description="My current front-end toolkit covers React, Next.js, TypeScript, responsive styling, motion, validation, and the development workflow around them"
       />
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
         {categories.map((category) => (

@@ -15,25 +15,25 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Creative Front-End Developer | Next.js Portfolio",
-    template: "%s | Creative Front-End Developer"
+    default: "Junior Front-End Developer | Next.js Portfolio",
+    template: "%s | Junior Front-End Developer"
   },
   description:
-    "Interactive 3D portfolio for a front-end developer specializing in Next.js, TypeScript, animation, UI/UX, and scalable architecture.",
-  keywords: ["Front-End Developer", "Next.js", "React", "TypeScript", "Three.js", "UI Engineer"],
+    "Portfolio for a fresh front-end developer focused on React, Next.js, TypeScript, responsive UI, accessibility, and project-based learning.",
+  keywords: ["Junior Front-End Developer", "Next.js", "React", "TypeScript", "Tailwind CSS", "Portfolio"],
   openGraph: {
-    title: "Creative Front-End Developer",
-    description: "High-end interactive 3D portfolio built with Next.js, TypeScript, and Three.js.",
+    title: "Junior Front-End Developer",
+    description: "Fresh front-end developer portfolio built with Next.js, TypeScript, Tailwind CSS, and motion.",
     url: siteUrl,
-    siteName: "Creative Front-End Portfolio",
-    images: [{ url: "/og.svg", width: 1200, height: 630, alt: "3D developer portfolio preview" }],
+    siteName: "Junior Front-End Portfolio",
+    images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Junior front-end developer portfolio preview" }],
     locale: "en_US",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Creative Front-End Developer",
-    description: "Next.js, TypeScript, animation, UI/UX, and scalable architecture.",
+    title: "Junior Front-End Developer",
+    description: "React, Next.js, TypeScript, responsive UI, accessibility, and project-based learning.",
     images: ["/og.svg"]
   },
   icons: {

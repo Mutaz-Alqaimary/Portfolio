@@ -15,8 +15,8 @@ export function ExperienceSection() {
     <section id="experience" ref={ref} className="container relative py-16 sm:py-24 lg:py-32">
       <SectionHeading
         eyebrow="Experience"
-        title="Measured delivery across products and campaigns."
-        description="I have worked across independent studio projects, product teams, and agency environments with a consistent focus on quality."
+        title="Learning path of my journey to become a front-end developer"
+        description="I am looking for my first front-end role, so this timeline shows my current practice, study focus, and project-based growth"
       />
       <div className="relative mx-auto max-w-4xl">
         <div className="absolute left-4 top-0 h-full w-0.5 bg-border sm:left-1/2" />

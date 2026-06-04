@@ -28,13 +28,19 @@ export function HeroSection() {
       >
         <motion.div variants={fadeUp} className="mb-4 inline-flex max-w-full items-center gap-2 rounded-2xl border border-primary/35 bg-primary/12 px-3 py-2 text-xs font-medium text-primary sm:mb-5 sm:px-4 sm:text-sm">
           <Sparkles className="size-4" />
-          <span className="truncate">Next.js front-end engineer</span>
+          <span className="truncate">Fresh front-end developer</span>
         </motion.div>
-        <motion.h1 variants={fadeUp} className="max-w-4xl text-[clamp(2.5rem,10vw,6.5rem)] font-semibold leading-[0.98] tracking-tight">
-          Building cinematic interfaces with scalable React architecture.
+        <motion.h1
+          variants={fadeUp}
+          className="max-w-3xl text-[clamp(2.35rem,8vw,5.65rem)] font-semibold leading-[1.04] tracking-tight text-foreground drop-shadow-[0_1px_18px_hsl(var(--background)/0.76)]"
+        >
+          Building clean React interfaces while growing into production front-end work
         </motion.h1>
-        <motion.p variants={fadeUp} className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:mt-6 sm:text-xl sm:leading-8">
-          I craft fast, accessible, motion-rich products with Next.js, TypeScript, Three.js, and a design-system mindset.
+        <motion.p
+          variants={fadeUp}
+          className="mt-4 max-w-xl text-base leading-7 text-foreground/78 sm:mt-5 sm:text-lg sm:leading-8"
+        >
+          I am a junior front-end developer focused on React, Next.js, TypeScript, responsive UI, accessibility, and practical project-based learning
         </motion.p>
         <motion.div variants={fadeUp} className="mt-7 flex w-full flex-wrap gap-3 sm:mt-9 sm:w-auto sm:gap-4">
           <MagneticButton>

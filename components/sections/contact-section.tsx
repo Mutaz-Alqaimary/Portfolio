@@ -26,8 +26,8 @@ export function ContactSection() {
   });
 
   async function onSubmit(values: ContactFormValues) {
+    void values;
     await new Promise((resolve) => window.setTimeout(resolve, 700));
-    console.info("Contact submission", values);
     setSent(true);
     reset();
   }
@@ -36,14 +36,14 @@ export function ContactSection() {
     <section id="contact" className="container py-16 sm:py-24 lg:py-32">
       <SectionHeading
         eyebrow="Contact"
-        title="Have a product interface worth sharpening?"
-        description="Send the project context, constraints, and target outcome. I will reply with a practical next step."
+        title="Open to junior front-end opportunities"
+        description="If you are hiring for an internship, junior role, or project collaboration, send a message and I will respond with my availability"
       />
       <div className="grid gap-5 lg:grid-cols-[0.75fr_1.25fr] lg:gap-6">
         <Reveal className="glass rounded-2xl p-5 sm:p-6">
-          <h3 className="text-xl font-semibold sm:text-2xl">Available for selected front-end builds.</h3>
+          <h3 className="text-xl font-semibold sm:text-2xl">Ready to contribute, learn, and improve.</h3>
           <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base">
-            Best fit: Next.js product surfaces, design-system implementation, advanced interaction work, and WebGL-led experiences.
+            Best fit: junior front-end roles, internships, React projects, landing pages, component implementation, and teams that value growth and clean UI work
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {socials.map((social) => (
@@ -63,14 +63,14 @@ export function ContactSection() {
           <form onSubmit={handleSubmit(onSubmit)} className="glass rounded-2xl p-5 sm:p-8" noValidate>
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Name" error={errors.name?.message}>
-                <input {...register("name")} className="w-full bg-transparent outline-none" placeholder="Alex Morgan" />
+                <input {...register("name")} className="w-full bg-transparent outline-none" placeholder="Your name" />
               </Field>
               <Field label="Email" error={errors.email?.message}>
-                <input {...register("email")} type="email" className="w-full bg-transparent outline-none" placeholder="alex@studio.com" />
+                <input {...register("email")} type="email" className="w-full bg-transparent outline-none" placeholder="you@example.com" />
               </Field>
             </div>
             <Field label="Message" error={errors.message?.message} className="mt-5">
-              <textarea {...register("message")} className="min-h-36 w-full resize-none bg-transparent outline-none sm:min-h-40" placeholder="Tell me about the interface, timeline, and constraints." />
+              <textarea {...register("message")} className="min-h-36 w-full resize-none bg-transparent outline-none sm:min-h-40" placeholder="Tell me about the role, project, or collaboration." />
             </Field>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Button type="submit" disabled={isSubmitting}>
@@ -79,7 +79,7 @@ export function ContactSection() {
               </Button>
               {sent ? (
                 <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="text-sm text-primary">
-                  Message received. I will respond shortly.
+                  Message received. I will respond shortly
                 </motion.p>
               ) : null}
             </div>

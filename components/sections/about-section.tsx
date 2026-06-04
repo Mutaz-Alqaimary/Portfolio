@@ -7,9 +7,9 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { experience } from "@/data/portfolio";
 
 const pillars = [
-  { icon: Layers3, title: "Systems-first UI", copy: "Reusable primitives, typed data contracts, and predictable styling tokens." },
-  { icon: Cpu, title: "Performance aware", copy: "Motion and 3D tuned for real devices, not only studio-grade hardware." },
-  { icon: Rocket, title: "Product polish", copy: "Interaction details that improve comprehension, confidence, and conversion." }
+  { icon: Layers3, title: "Structured components", copy: "Reusable React pieces, typed props, and clear styling patterns." },
+  { icon: Cpu, title: "Performance mindset", copy: "Learning to keep interfaces fast, responsive, and light on unnecessary JavaScript." },
+  { icon: Rocket, title: "Product details", copy: "Small interaction choices that make pages easier to read, use, and trust." }
 ];
 
 export function AboutSection() {
@@ -17,8 +17,8 @@ export function AboutSection() {
     <section id="about" className="container py-16 sm:py-24 lg:py-32">
       <SectionHeading
         eyebrow="About"
-        title="Creative engineering with production discipline."
-        description="I bridge visual craft and scalable front-end systems, turning ambitious product ideas into fast, maintainable interfaces."
+        title="A fresh developer with strong front-end focus"
+        description="I do not have previous job experience yet, so this portfolio focuses on what I can build, how I learn, and the standards I am practicing every day"
       />
       <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
         {pillars.map((pillar) => (
@@ -38,7 +38,7 @@ export function AboutSection() {
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-8">
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-primary sm:text-sm sm:tracking-[0.32em]">Current focus</p>
-            <h3 className="mt-4 text-2xl font-semibold leading-tight sm:text-3xl">Next.js architecture, motion systems, and 3D storytelling.</h3>
+            <h3 className="mt-4 text-2xl font-semibold leading-tight sm:text-3xl">React fundamentals, Next.js App Router, TypeScript, and accessible UI</h3>
           </div>
           <div className="space-y-5">
             {experience.slice(0, 2).map((item) => (

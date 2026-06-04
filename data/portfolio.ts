@@ -1,4 +1,5 @@
-import { BriefcaseBusiness, Code2, Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import type { Experience, NavItem, Project, Skill, SocialLink } from "@/types/portfolio";
 
 export const navItems: NavItem[] = [
@@ -11,84 +12,84 @@ export const navItems: NavItem[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "Next.js App Router", level: 96, category: "Core" },
-  { name: "React Architecture", level: 94, category: "Core" },
-  { name: "TypeScript", level: 92, category: "Core" },
-  { name: "Three.js / R3F", level: 88, category: "Animation" },
-  { name: "Framer Motion", level: 93, category: "Animation" },
-  { name: "GSAP Timelines", level: 82, category: "Animation" },
-  { name: "Design Systems", level: 90, category: "Architecture" },
-  { name: "State Management", level: 86, category: "Architecture" },
-  { name: "Performance Budgets", level: 89, category: "Tooling" },
-  { name: "Testing Strategy", level: 81, category: "Tooling" }
+  { name: "HTML & Semantic UI", level: 100, category: "Core" },
+  { name: "CSS / Tailwind CSS", level: 95, category: "Core" },
+  { name: "React Fundamentals", level: 100, category: "Core" },
+  { name: "TypeScript Basics", level: 93, category: "Core" },
+  { name: "Next.js App Router", level: 94, category: "Architecture" },
+  { name: "Component Structure", level: 100, category: "Architecture" },
+  { name: "Forms & Zod Validation", level: 92, category: "Architecture" },
+  { name: "Local / URL State", level: 96, category: "Architecture" },
+  { name: "Framer Motion", level: 88, category: "Animation" },
+  { name: "Three.js / R3F Basics", level: 86, category: "Animation" },
+  { name: "Responsive Design", level: 100, category: "Tooling" },
+  { name: "Git, ESLint & TypeScript", level: 92, category: "Tooling" }
 ];
 
 export const projects: Project[] = [
   {
-    title: "Nexus Commerce Studio",
-    slug: "nexus-commerce-studio",
-    description: "Headless storefront interface with motion-led product discovery and realtime merch tooling.",
+    title: "Personal Portfolio",
+    slug: "personal-portfolio",
+    description: "Responsive portfolio built to present my front-end skills, projects, learning path, and contact details",
     details:
-      "Designed a composable App Router architecture, optimized image delivery, and created interactive product modules that reduced decision friction across mobile and desktop flows.",
+      "Built with the Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, and a lightweight 3D hero scene. The focus is clean structure, responsive layouts, accessible sections, and honest presentation for a first front-end role",
     image: "/assets/projects/nexus.svg",
-    stack: ["Next.js", "TypeScript", "R3F", "Zustand", "Stripe"],
-    github: "https://github.com/example/nexus-commerce",
-    demo: "https://nexus-commerce.example.com",
-    impact: "38% faster route transitions"
+    stack: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "R3F"],
+    github: "https://github.com/Mutaz-Alqaimary",
+    demo: "https://github.com/Mutaz-Alqaimary",
+    impact: "Portfolio project"
   },
   {
-    title: "SignalOps Dashboard",
-    slug: "signalops-dashboard",
-    description: "Dense operational dashboard for engineering teams with accessible charts and command workflows.",
+    title: "Dashboard UI Practice",
+    slug: "dashboard-ui-practice",
+    description: "A front-end practice build focused on cards, tables, filters, empty states, and responsive dashboard layout",
     details:
-      "Built a resilient component system, keyboard-first interaction patterns, and progressive data states for high-frequency operational review.",
+      "Practiced turning dashboard requirements into reusable UI sections with clear information hierarchy, keyboard-friendly controls, form validation, and maintainable component boundaries",
     image: "/assets/projects/signalops.svg",
-    stack: ["React", "TanStack", "Tailwind", "Zod", "Motion"],
-    github: "https://github.com/example/signalops",
-    demo: "https://signalops.example.com",
-    impact: "2.4s faster daily triage"
+    stack: ["React", "TypeScript", "Tailwind", "Zod", "Motion"],
+    github: "https://github.com/Mutaz-Alqaimary",
+    demo: "https://github.com/Mutaz-Alqaimary",
+    impact: "Learning project"
   },
   {
-    title: "Astra Launch System",
-    slug: "astra-launch-system",
-    description: "Interactive launch site with cinematic WebGL visuals and conversion-focused content modules.",
+    title: "Commerce Landing UI",
+    slug: "commerce-landing-ui",
+    description: "A landing page concept exploring product sections, responsive composition, motion, and clear calls to action",
     details:
-      "Delivered a performant 3D hero, scroll choreography, and reusable content primitives tuned for Vercel edge deployment.",
+      "Focused on building a polished marketing interface without overloading the page: semantic sections, optimized visual hierarchy, accessible buttons, and motion that supports the content",
     image: "/assets/projects/astra.svg",
-    stack: ["Next.js", "Three.js", "GSAP", "Vercel", "MDX"],
-    github: "https://github.com/example/astra-launch",
-    demo: "https://astra-launch.example.com",
-    impact: "96 Lighthouse performance"
+    stack: ["Next.js", "Tailwind", "Framer Motion", "Responsive UI", "Vercel"],
+    github: "https://github.com/Mutaz-Alqaimary",
+    demo: "https://github.com/Mutaz-Alqaimary",
+    impact: "Practice concept"
   }
 ];
 
 export const experience: Experience[] = [
   {
-    role: "Senior Front-End Developer",
-    company: "Independent Studio",
-    period: "2024 - Present",
-    description: "Building premium web interfaces for SaaS, commerce, and creative technology clients.",
-    highlights: ["Led App Router migrations", "Created animation systems", "Improved Core Web Vitals"]
+    role: "Front-End Developer",
+    company: "Personal projects and portfolio",
+    period: "2026 - Present",
+    description: "Building portfolio-ready projects while preparing for my first professional front-end role",
+    highlights: ["Next.js App Router practice", "Responsive and accessible UI", "Project documentation"]
   },
   {
-    role: "React Engineer",
-    company: "Product Lab",
-    period: "2021 - 2024",
-    description: "Shipped design systems and production interfaces for fast-growing product teams.",
-    highlights: ["Scaled component libraries", "Built typed form workflows", "Mentored front-end teams"]
+    role: "React & TypeScript Learner",
+    company: "Self-directed study",
+    period: "2025 - 2026",
+    description: "Studying React, TypeScript, component architecture, forms, validation, and state management through practical builds",
+    highlights: ["Reusable components", "Typed props and data models", "Form validation with Zod"]
   },
   {
-    role: "UI Developer",
-    company: "Digital Agency",
-    period: "2019 - 2021",
-    description: "Created responsive, brand-driven web experiences with animation and CMS integrations.",
-    highlights: ["Delivered award-style microsites", "Optimized mobile UX", "Improved accessibility baselines"]
+    role: "Frontend Foundations",
+    company: "Hands-on learning",
+    period: "2024 - 2025",
+    description: "Built a foundation in HTML, CSS, JavaScript, responsive layouts, Git workflows, and UI problem solving",
+    highlights: ["Semantic HTML", "Mobile-first CSS", "JavaScript fundamentals"]
   }
 ];
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/Mutaz-Alqaimary", icon: Code2 },
-  { label: "LinkedIn", href: "https://linkedin.com/in/example", icon: BriefcaseBusiness },
-  { label: "Twitter", href: "https://twitter.com/example", icon: MessageCircle },
+  { label: "GitHub", href: "https://github.com/Mutaz-Alqaimary", icon: FaGithub },
   { label: "Email", href: "mailto:mutazalqaimary5@gmail.com", icon: Mail }
 ];

@@ -1,4 +1,6 @@
 import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
+
 
 export type NavItem = {
   label: string;
@@ -35,5 +37,5 @@ export type Experience = {
 export type SocialLink = {
   label: string;
   href: string;
-  icon: LucideIcon;
+  icon: LucideIcon | IconType;
 };

@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Code2, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/animations/reveal";
 import { Button } from "@/components/ui/button";
@@ -18,8 +19,8 @@ export function ProjectsSection() {
     <section id="projects" className="container py-16 sm:py-24 lg:py-32">
       <SectionHeading
         eyebrow="Projects"
-        title="Selected builds with interaction depth."
-        description="A sample of product interfaces, dashboards, and WebGL experiences shaped for measurable quality and memorable UX."
+        title="Practice projects that show how I build"
+        description="These projects are learning-focused builds that demonstrate responsive layout, component thinking, animation, validation, and Next.js fundamentals"
       />
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
@@ -45,7 +46,7 @@ export function ProjectsSection() {
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <Button variant="secondary" onClick={() => openProject(project.slug)}>Details</Button>
                   <Link target="_blank" href={project.github} aria-label={`${project.title} GitHub`} className="grid size-11 place-items-center rounded-2xl border border-border transition hover:border-primary sm:size-12">
-                    <Code2 className="size-4" />
+                    <FaGithub className="size-5" />
                   </Link>
                   <Link target="_blank" href={project.demo} aria-label={`${project.title} live demo`} className="grid size-11 place-items-center rounded-2xl border border-border transition hover:border-primary sm:size-12">
                     <ExternalLink className="size-4" />
