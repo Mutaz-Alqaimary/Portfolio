@@ -29,7 +29,7 @@ export function Navbar() {
           href="#home"
           className={cn(
             "flex min-w-0 flex-1 items-center gap-2 rounded-2xl py-1 pr-1 text-sm font-semibold transition-colors sm:gap-3 sm:pr-3 lg:flex-none lg:text-base",
-            logoActive ? "text-primary" : "text-foreground hover:text-primary"
+            "text-foreground hover:text-primary"
           )}
           aria-label="Go to hero"
           aria-current={logoActive ? "page" : undefined}
@@ -37,10 +37,7 @@ export function Navbar() {
         >
           <span
             className={cn(
-              "grid size-9 shrink-0 place-items-center rounded-2xl border transition-colors sm:size-10",
-              logoActive
-                ? "border-primary/45 bg-primary/20 text-primary shadow-glow"
-                : "bg-primary/12 text-primary border-transparent"
+              "grid size-9 shrink-0 place-items-center rounded-2xl border transition-colors sm:size-10","bg-primary/12 text-primary border-transparent"
             )}
           >
             <Code2 className="size-5" />

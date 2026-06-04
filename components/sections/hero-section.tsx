@@ -32,9 +32,9 @@ export function HeroSection() {
         </motion.div>
         <motion.h1
           variants={fadeUp}
-          className="max-w-3xl text-[clamp(2.35rem,8vw,5.65rem)] font-semibold leading-[1.04] tracking-tight text-foreground drop-shadow-[0_1px_18px_hsl(var(--background)/0.76)]"
+          className="max-w-2xl text-[clamp(2rem,6vw,4.4rem)] font-semibold leading-[1.08] tracking-tight text-hero-title drop-shadow-[0_1px_14px_hsl(var(--card)/0.86)]"
         >
-          Building clean React interfaces while growing into production front-end work
+          Crafting sleek React and Next.js interfaces for the modern web
         </motion.h1>
         <motion.p
           variants={fadeUp}
