@@ -24,14 +24,18 @@ export function SkillsSection() {
                 {skills
                   .filter((skill) => skill.category === category)
                   .map((skill) => (
-                    <motion.div key={skill.name} whileHover={{ scale: 1.025 }} className="rounded-2xl border border-border/60 bg-background/50 p-4">
+                    <motion.div
+                      key={skill.name}
+                      whileHover={{ scale: 1.025 }}
+                      className="border-border/60 bg-background/50 rounded-2xl border p-4"
+                    >
                       <div className="flex items-center justify-between gap-4 text-sm">
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-primary">{skill.level}%</span>
                       </div>
-                      <div className="mt-3 h-2 overflow-hidden rounded-full bg-muted">
+                      <div className="bg-muted mt-3 h-2 overflow-hidden rounded-full">
                         <motion.div
-                          className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+                          className="from-primary to-accent h-full rounded-full bg-linear-to-r"
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
                           viewport={{ once: true }}

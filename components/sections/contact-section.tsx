@@ -11,6 +11,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { socials } from "@/data/portfolio";
 import { contactSchema, type ContactFormValues } from "@/lib/validations";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function ContactSection() {
   const [sent, setSent] = useState(false);
@@ -46,14 +47,15 @@ export function ContactSection() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             {socials.map((social) => (
-              <a
+              <Link
+                target="_blank"
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
                 className="grid size-11 place-items-center rounded-2xl border border-border bg-background/50 transition hover:border-primary hover:text-primary sm:size-12"
               >
                 <social.icon className="size-5" />
-              </a>
+              </Link>
             ))}
           </div>
         </Reveal>

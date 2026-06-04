@@ -21,7 +21,7 @@ export function Button({ children, className, variant = "primary", ...props }: B
   return (
     <button
       className={cn(
-        "inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition focus:outline-hidden focus:ring-2 focus:ring-primary/60 sm:min-h-12 sm:px-5 sm:py-3",
+        "inline-flex cursor-pointer min-h-11 items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition focus:outline-hidden focus:ring-2 focus:ring-primary/60 sm:min-h-12 sm:px-5 sm:py-3",
         variants[variant],
         className
       )}

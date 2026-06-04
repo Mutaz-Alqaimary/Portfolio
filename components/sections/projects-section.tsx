@@ -9,6 +9,7 @@ import { ProjectModal } from "@/components/ui/project-modal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { projects } from "@/data/portfolio";
 import { useUiStore } from "@/store/use-ui-store";
+import Link from "next/link";
 
 export function ProjectsSection() {
   const openProject = useUiStore((state) => state.openProject);
@@ -27,7 +28,7 @@ export function ProjectsSection() {
               whileHover={{ y: -10, rotateX: 3, rotateY: -3 }}
               className="glass group flex h-full flex-col overflow-hidden rounded-2xl"
             >
-              <div className="relative aspect-[16/11] overflow-hidden">
+              <div className="relative aspect-16/11 overflow-hidden">
                 <Image src={project.image} alt={`${project.title} interface preview`} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(min-width: 1024px) 33vw, 100vw" />
               </div>
               <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -43,12 +44,12 @@ export function ProjectsSection() {
                 </div>
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <Button variant="secondary" onClick={() => openProject(project.slug)}>Details</Button>
-                  <a href={project.github} aria-label={`${project.title} GitHub`} className="grid size-11 place-items-center rounded-2xl border border-border transition hover:border-primary sm:size-12">
+                  <Link target="_blank" href={project.github} aria-label={`${project.title} GitHub`} className="grid size-11 place-items-center rounded-2xl border border-border transition hover:border-primary sm:size-12">
                     <Code2 className="size-4" />
-                  </a>
-                  <a href={project.demo} aria-label={`${project.title} live demo`} className="grid size-11 place-items-center rounded-2xl border border-border transition hover:border-primary sm:size-12">
+                  </Link>
+                  <Link target="_blank" href={project.demo} aria-label={`${project.title} live demo`} className="grid size-11 place-items-center rounded-2xl border border-border transition hover:border-primary sm:size-12">
                     <ExternalLink className="size-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.article>

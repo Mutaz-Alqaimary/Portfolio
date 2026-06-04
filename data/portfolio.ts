@@ -87,8 +87,8 @@ export const experience: Experience[] = [
 ];
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/example", icon: Code2 },
+  { label: "GitHub", href: "https://github.com/Mutaz-Alqaimary", icon: Code2 },
   { label: "LinkedIn", href: "https://linkedin.com/in/example", icon: BriefcaseBusiness },
   { label: "Twitter", href: "https://twitter.com/example", icon: MessageCircle },
-  { label: "Email", href: "mailto:hello@portfolio.dev", icon: Mail }
+  { label: "Email", href: "mailto:mutazalqaimary5@gmail.com", icon: Mail }
 ];

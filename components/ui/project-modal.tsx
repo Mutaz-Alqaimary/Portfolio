@@ -31,12 +31,12 @@ export function ProjectModal() {
             exit={{ y: 24, scale: 0.98 }}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[16/10] sm:aspect-[16/8]">
+            <div className="relative aspect-16/10 sm:aspect-16/8">
               <Image src={project.image} alt="" fill className="object-cover" sizes="768px" />
               <button
                 type="button"
                 aria-label="Close project details"
-                className="absolute right-3 top-3 grid size-10 place-items-center rounded-2xl bg-background/85 backdrop-blur sm:right-4 sm:top-4 sm:size-11"
+                className="cursor-pointer transition hover:border-primary hover:text-primary absolute right-3 top-3 grid size-10 place-items-center rounded-2xl bg-background/85 backdrop-blur sm:right-4 sm:top-4 sm:size-11"
                 onClick={closeProject}
               >
                 <X className="size-5" />
