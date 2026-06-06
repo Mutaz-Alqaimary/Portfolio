@@ -5,7 +5,7 @@ import { Reveal } from "@/components/animations/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { skills } from "@/data/portfolio";
 
-const categories = ["Core", "Animation", "Architecture", "Tooling"] as const;
+const categories = ["Core", "Animation", "Architecture", "Tooling", "Management-State", "Performance-Optimization"] as const;
 
 export function SkillsSection() {
   return (

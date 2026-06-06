@@ -11,7 +11,7 @@ export type NavItem = {
 export type Skill = {
   name: string;
   level: number;
-  category: "Core" | "Animation" | "Architecture" | "Tooling";
+  category: "Core" | "Animation" | "Architecture" | "Tooling" | "Management-State" | "Performance-Optimization";
 };
 
 export type Project = {
