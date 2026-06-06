@@ -25,7 +25,7 @@ export const skills: Skill[] = [
   { name: "GSAP", level: 86, category: "Animation" },
   { name: "Responsive Design", level: 100, category: "Tooling" },
   { name: "Git, GitHub, ESLint & TypeScript", level: 92, category: "Tooling" },
-  { name: "React Query (TanStack Query)", level: 91, category: "Tooling" },
+  { name: "React Query", level: 91, category: "Tooling" },
   { name: "React Hooks", level: 91, category: "Tooling" },
   { name: "Redux", level: 90, category: "Management-State" },
   { name: "Zustand", level: 93, category: "Management-State" },
