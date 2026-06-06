@@ -15,7 +15,7 @@ export function SkillsSection() {
         title="Skills I am actively building through practice"
         description="My current front-end toolkit covers React, Next.js, TypeScript, responsive styling, motion, validation, and the development workflow around them"
       />
-      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         {categories.map((category) => (
           <Reveal key={category}>
             <div className="glass h-full rounded-2xl p-4 sm:p-5">
