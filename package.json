@@ -36,6 +36,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/three": "latest",
+    "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "postcss": "latest",
