@@ -1,43 +1,80 @@
-# 3D Developer Portfolio
+# Junior Front-End Developer Portfolio
 
-Production-ready interactive portfolio built with Next.js App Router, TypeScript, Tailwind CSS, React Three Fiber, Drei, Framer Motion, Zustand, React Hook Form, and Zod.
+Interactive portfolio website for a junior front-end developer, built with the Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, and React Three Fiber.
+
+Live site: [https://frontend-developer-portfolio-bice.vercel.app](https://frontend-developer-portfolio-bice.vercel.app)
+
+## Overview
+
+This project presents a personal portfolio with sections for hero, about, skills, projects, experience, and contact. The content is typed and centralized in `data/portfolio.ts`, while the UI is split into reusable sections, animation helpers, and small interface primitives.
 
 ## Features
 
-- Dynamic 3D hero scene with particles, lighting, cursor parallax, and postprocessing.
-- Responsive sections for hero, about, skills, projects, experience, and contact.
-- Typed content layer in `data/portfolio.ts`.
-- Reusable motion, UI, validation, and state utilities.
-- SEO metadata, Open Graph image, sitemap, robots, and Vercel-ready config.
-- Accessible navigation, reduced-motion support, semantic layout, and validated contact form.
+- App Router architecture with server-rendered pages and metadata.
+- Responsive portfolio sections for profile, skills, projects, experience, and contact.
+- Interactive 3D hero scene using Three.js, React Three Fiber, Drei, and postprocessing.
+- Motion system with Framer Motion reveal effects, scroll progress, and reduced-motion support.
+- Dark and light theme support through `next-themes`.
+- Typed portfolio data, project modals, active-section navigation, and reusable UI components.
+- SEO setup with Metadata API, Open Graph image, sitemap, robots, and configurable site URL.
+- Contact form validation with React Hook Form and Zod.
+
+## Tech Stack
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Three.js, React Three Fiber, Drei
+- Zustand
+- React Hook Form
+- Zod
+- Lucide React and React Icons
+
+## Project Structure
+
+```txt
+app/                    App Router pages, layout, loading, not-found, sitemap, robots
+components/3d/          React Three Fiber hero scene
+components/animations/  Cursor, loader, reveal, and scroll progress components
+components/sections/    Main portfolio sections
+components/ui/          Reusable UI primitives
+data/                   Typed portfolio content
+hooks/                  Browser, interaction, and accessibility hooks
+lib/                    Utilities, motion variants, and validation schemas
+providers/              Theme provider
+store/                  Zustand UI state
+styles/                 Global Tailwind and CSS variable theme
+public/                 Static assets, favicon, and Open Graph image
+types/                  Shared TypeScript models
+```
 
 ## Getting Started
 
+Install dependencies:
+
 ```bash
 npm install
+```
+
+Run the development server:
+
+```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Quality Commands
+## Customizing Content
 
-```bash
-npm run typecheck
-npm run lint
-npm run build
-```
+Most portfolio content lives in `data/portfolio.ts`:
 
-## Structure
+- `navItems` controls the navigation links.
+- `skills` controls the skills grid.
+- `projects` controls project cards, modal details, images, GitHub links, and demos.
+- `experience` controls the timeline content.
+- `socials` controls footer and contact links.
 
-- `app/` App Router routes and metadata.
-- `components/3d/` React Three Fiber scene system.
-- `components/animations/` reusable motion effects.
-- `components/sections/` page sections.
-- `components/ui/` reusable UI primitives.
-- `data/` typed portfolio content.
-- `hooks/` browser and interaction hooks.
-- `lib/` utilities, motion variants, validation schemas.
-- `store/` Zustand UI state.
-- `styles/` global theme and Tailwind layers.
-- `public/assets/` optimized static visual assets.
+Project screenshots are stored in `public/assets/projects/`.
+
