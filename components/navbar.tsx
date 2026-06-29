@@ -13,6 +13,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
   const shouldReduceMotion = useReducedMotion();
   const menuOffset = shouldReduceMotion ? 0 : -8;
   const activeSection = useUiStore((state) => state.activeSection);
@@ -20,7 +21,7 @@ export function Navbar() {
   const logoActive = activeSection === "home";
   const closeMenu = useCallback(() => setOpen(false), []);
 
-  useOutsideClick(menuRef, closeMenu, { enabled: open });
+  useOutsideClick(menuRef, closeMenu, { enabled: open, ignore: triggerRef });
 
   return (
     <header className="fixed top-0 right-0 left-0 z-40 px-2 py-2.5 sm:px-4 sm:py-3">
@@ -76,6 +77,7 @@ export function Navbar() {
         <div className="flex shrink-0 items-center gap-2">
           <ThemeToggle />
           <button
+            ref={triggerRef}
             type="button"
             className="border-border/80 bg-card/72 text-foreground hover:border-primary/45 hover:bg-muted/80 focus:ring-primary/45 grid size-10 cursor-pointer place-items-center rounded-2xl border transition focus:ring-2 focus:outline-hidden sm:size-11 lg:hidden"
             aria-label="Toggle navigation"

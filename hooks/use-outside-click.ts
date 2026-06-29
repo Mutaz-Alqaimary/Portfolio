@@ -4,12 +4,14 @@ import { useEffect, type RefObject } from "react";
 
 type OutsideClickOptions = {
   enabled?: boolean;
+  /** Element(s) whose clicks should not count as "outside" (e.g. the toggle that opens the menu). */
+  ignore?: RefObject<HTMLElement | null>;
 };
 
 export function useOutsideClick<TElement extends HTMLElement>(
   ref: RefObject<TElement | null>,
   onDismiss: () => void,
-  { enabled = true }: OutsideClickOptions = {}
+  { enabled = true, ignore }: OutsideClickOptions = {}
 ) {
   useEffect(() => {
     if (!enabled) return;
@@ -19,6 +21,10 @@ export function useOutsideClick<TElement extends HTMLElement>(
       const target = event.target;
 
       if (!element || !(target instanceof Node) || element.contains(target)) {
+        return;
+      }
+
+      if (ignore?.current?.contains(target)) {
         return;
       }
 
@@ -38,5 +44,5 @@ export function useOutsideClick<TElement extends HTMLElement>(
       document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [enabled, onDismiss, ref]);
+  }, [enabled, onDismiss, ref, ignore]);
 }
