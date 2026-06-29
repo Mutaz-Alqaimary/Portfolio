@@ -8,10 +8,9 @@ export type NavItem = {
   section: string;
 };
 
-export type Skill = {
-  name: string;
-  level: number;
-  category: "Core" | "Animation" | "Architecture" | "Tooling" | "Management-State" | "Performance-Optimization";
+export type SkillGroup = {
+  title: string;
+  items: string[];
 };
 
 export type Project = {

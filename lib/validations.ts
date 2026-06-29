@@ -5,5 +5,3 @@ export const contactSchema = z.object({
   email: z.email("Enter a valid email address."),
   message: z.string().min(20, "Share a little more context.")
 });
-
-export type ContactFormValues = z.infer<typeof contactSchema>;

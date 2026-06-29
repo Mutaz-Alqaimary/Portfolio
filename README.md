@@ -1,6 +1,6 @@
-# Junior Front-End Developer Portfolio
+# Mutaz Alqaimary — Front-End Developer Portfolio
 
-Interactive portfolio website for a junior front-end developer, built with the Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, and React Three Fiber.
+Personal portfolio website for Mutaz Alqaimary, a front-end developer, built with the Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, and React Three Fiber.
 
 Live site: [https://frontend-developer-portfolio-bice.vercel.app](https://frontend-developer-portfolio-bice.vercel.app)
 
@@ -16,8 +16,8 @@ This project presents a personal portfolio with sections for hero, about, skills
 - Motion system with Framer Motion reveal effects, scroll progress, and reduced-motion support.
 - Dark and light theme support through `next-themes`.
 - Typed portfolio data, project modals, active-section navigation, and reusable UI components.
-- SEO setup with Metadata API, Open Graph image, sitemap, robots, and configurable site URL.
-- Contact form validation with React Hook Form and Zod.
+- SEO setup with Metadata API, Open Graph image, sitemap, robots, JSON-LD, and configurable site URL.
+- Honest, API-free contact section: Zod-validated `mailto:` composer plus prominent direct email and LinkedIn links.
 
 ## Tech Stack
 
@@ -28,7 +28,6 @@ This project presents a personal portfolio with sections for hero, about, skills
 - Framer Motion
 - Three.js, React Three Fiber, Drei
 - Zustand
-- React Hook Form
 - Zod
 - Lucide React and React Icons
 
@@ -66,6 +65,18 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## Contact
+
+The contact section is intentionally free of any third-party email service or API. The primary
+contact methods are shown prominently as direct links:
+
+- Email: `mutazalqaimary5@gmail.com`
+- LinkedIn: <https://www.linkedin.com/in/mutaz-alqaimary-0a53a125a>
+
+The form is a convenience composer: it validates input with Zod on the client, then opens the
+visitor's own email app pre-filled with their message via a `mailto:` link. No data is sent to any
+server, no secrets are required, and there is no fake "message sent" state.
+
 ## Customizing Content
 
 Most portfolio content lives in `data/portfolio.ts`:
@@ -77,4 +88,3 @@ Most portfolio content lives in `data/portfolio.ts`:
 - `socials` controls footer and contact links.
 
 Project screenshots are stored in `public/assets/projects/`.
-

@@ -23,9 +23,14 @@ export function AnimatedCursor() {
       document.documentElement.style.setProperty("--y", `${(event.clientY / window.innerHeight) * 100}%`);
     };
 
+    const hide = () => setVisible(false);
+
     window.addEventListener("pointermove", move);
-    window.addEventListener("pointerleave", () => setVisible(false));
-    return () => window.removeEventListener("pointermove", move);
+    window.addEventListener("pointerleave", hide);
+    return () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerleave", hide);
+    };
   }, [isTouch, x, y]);
 
   if (isTouch) return null;

@@ -1,6 +1,14 @@
 import { Mail } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
-import type { Experience, NavItem, Project, Skill, SocialLink } from "@/types/portfolio";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import type { Experience, NavItem, Project, SkillGroup, SocialLink } from "@/types/portfolio";
+
+export const profile = {
+  name: "Mutaz Alqaimary",
+  role: "Front-End Developer",
+  email: "mutazalqaimary5@gmail.com",
+  github: "https://github.com/Mutaz-Alqaimary",
+  linkedin: "https://www.linkedin.com/in/mutaz-alqaimary-0a53a125a"
+} as const;
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "#home", section: "home" },
@@ -11,29 +19,31 @@ export const navItems: NavItem[] = [
   { label: "Contact", href: "#contact", section: "contact" }
 ];
 
-export const skills: Skill[] = [
-  { name: "HTML & Semantic UI", level: 100, category: "Core" },
-  { name: "CSS / Tailwind CSS", level: 95, category: "Core" },
-  { name: "React Fundamentals", level: 100, category: "Core" },
-  { name: "TypeScript Basics", level: 93, category: "Core" },
-  { name: "Next.js App Router", level: 94, category: "Architecture" },
-  { name: "Component Structure", level: 100, category: "Architecture" },
-  { name: "Forms & Zod Validation", level: 92, category: "Architecture" },
-  { name: "Local / URL State", level: 96, category: "Architecture" },
-  { name: "Framer Motion", level: 88, category: "Animation" },
-  { name: "Three.js / R3F Basics", level: 86, category: "Animation" },
-  { name: "GSAP", level: 86, category: "Animation" },
-  { name: "Responsive Design", level: 100, category: "Tooling" },
-  { name: "Git, GitHub, ESLint & TypeScript", level: 92, category: "Tooling" },
-  { name: "React Query", level: 91, category: "Tooling" },
-  { name: "React Hooks", level: 91, category: "Tooling" },
-  { name: "Redux", level: 90, category: "Management-State" },
-  { name: "Zustand", level: 93, category: "Management-State" },
-  { name: "Context API", level: 96, category: "Management-State" },
-  { name: "Server & Client Components", level: 89, category: "Performance-Optimization" },
-  { name: "SSR & SSG & ISR", level: 89, category: "Performance-Optimization" },
-  { name: "Caching Strategies", level: 89, category: "Performance-Optimization" },
-  { name: "SEO", level: 89, category: "Performance-Optimization" },
+export const skillGroups: SkillGroup[] = [
+  {
+    title: "Languages & Markup",
+    items: ["HTML", "CSS", "JavaScript", "TypeScript"]
+  },
+  {
+    title: "Frameworks & Libraries",
+    items: ["React", "Next.js (App Router)", "React Hooks", "React Query"]
+  },
+  {
+    title: "Styling & Animation",
+    items: ["Tailwind CSS", "Responsive Design", "Framer Motion", "GSAP", "Three.js / React Three Fiber"]
+  },
+  {
+    title: "State Management",
+    items: ["Context API", "Zustand", "Redux"]
+  },
+  {
+    title: "Architecture & Performance",
+    items: ["Server & Client Components", "SSR / SSG / ISR", "Caching Strategies", "Forms & Zod Validation", "SEO"]
+  },
+  {
+    title: "Tooling & Workflow",
+    items: ["Git & GitHub", "ESLint", "Prettier", "Accessibility"]
+  }
 ];
 
 export const projects: Project[] = [
@@ -137,6 +147,7 @@ export const experience: Experience[] = [
 ];
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/Mutaz-Alqaimary", icon: FaGithub },
-  { label: "Email", href: "mailto:mutazalqaimary5@gmail.com", icon: Mail }
+  { label: "GitHub", href: profile.github, icon: FaGithub },
+  { label: "LinkedIn", href: profile.linkedin, icon: FaLinkedin },
+  { label: "Email", href: `mailto:${profile.email}`, icon: Mail }
 ];

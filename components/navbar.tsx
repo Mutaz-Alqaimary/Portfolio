@@ -31,7 +31,7 @@ export function Navbar() {
             "flex min-w-0 flex-1 items-center gap-2 rounded-2xl py-1 pr-1 text-sm font-semibold transition-colors sm:gap-3 sm:pr-3 lg:flex-none lg:text-base",
             "text-foreground hover:text-primary"
           )}
-          aria-label="Go to hero"
+          aria-label="Mutaz Alqaimary — back to top"
           aria-current={logoActive ? "page" : undefined}
           onClick={() => setActiveSection("home")}
         >
@@ -43,7 +43,7 @@ export function Navbar() {
             <Code2 className="size-5" />
           </span>
           <span className="hidden truncate sm:inline lg:max-w-46 xl:max-w-none">
-            Front-End Developer
+            Mutaz Alqaimary
           </span>
         </Link>
 

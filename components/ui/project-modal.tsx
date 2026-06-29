@@ -1,17 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import { useUiStore } from "@/store/use-ui-store";
+import { useDialog } from "@/hooks/use-dialog";
+import { useMounted } from "@/hooks/use-mounted";
 
 export function ProjectModal() {
   const projectSlug = useUiStore((state) => state.projectSlug);
   const closeProject = useUiStore((state) => state.closeProject);
   const project = projects.find((item) => item.slug === projectSlug);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const mounted = useMounted();
 
-  return (
+  useDialog(panelRef, { open: Boolean(project), onClose: closeProject });
+
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {project ? (
         <motion.div
@@ -19,13 +29,16 @@ export function ProjectModal() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${project.title} details`}
           onClick={closeProject}
         >
           <motion.div
-            className="glass max-h-[90svh] w-full max-w-3xl overflow-auto rounded-2xl"
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            aria-describedby="project-modal-description"
+            tabIndex={-1}
+            className="glass max-h-[90svh] w-full max-w-3xl overflow-auto rounded-2xl outline-none"
             initial={{ y: 36, scale: 0.96 }}
             animate={{ y: 0, scale: 1 }}
             exit={{ y: 24, scale: 0.98 }}
@@ -44,8 +57,15 @@ export function ProjectModal() {
             </div>
             <div className="p-5 sm:p-8">
               <p className="text-sm text-primary">{project.impact}</p>
-              <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">{project.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">{project.details}</p>
+              <h3 id="project-modal-title" className="mt-3 text-2xl font-semibold sm:text-3xl">
+                {project.title}
+              </h3>
+              <p
+                id="project-modal-description"
+                className="mt-4 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8"
+              >
+                {project.details}
+              </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <span key={tech} className="rounded-full border border-border bg-background/50 px-3 py-1 text-xs text-muted-foreground">
@@ -57,6 +77,7 @@ export function ProjectModal() {
           </motion.div>
         </motion.div>
       ) : null}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

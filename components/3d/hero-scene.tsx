@@ -1,11 +1,12 @@
 "use client";
 
-import { Float, MeshTransmissionMaterial, OrbitControls, Stars } from "@react-three/drei";
+import { Float, MeshTransmissionMaterial, Stars } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Bloom, EffectComposer, Vignette } from "@react-three/postprocessing";
 import { memo, useMemo, useRef } from "react";
+import { useInView } from "framer-motion";
 import type { Mesh, Points } from "three";
-import { BufferAttribute, BufferGeometry, Color } from "three";
+import { BufferAttribute, BufferGeometry } from "three";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
@@ -29,7 +30,7 @@ function seededRandom(seed: number) {
   return value - Math.floor(value);
 }
 
-function ParticleField({ count }: { count: number }) {
+function ParticleField({ count, reduced }: { count: number; reduced: boolean }) {
   const points = useRef<Points>(null);
   const geometry = useMemo(() => {
     const positions = new Float32Array(count * 3);
@@ -44,33 +45,36 @@ function ParticleField({ count }: { count: number }) {
   }, [count]);
 
   useFrame((_, delta) => {
-    if (points.current) points.current.rotation.y += delta * 0.025;
+    if (reduced || !points.current) return;
+    points.current.rotation.y += delta * 0.025;
   });
 
   return (
     <points ref={points} geometry={geometry}>
-      <pointsMaterial size={0.025} color={new Color("#69fff1")} transparent opacity={0.72} sizeAttenuation />
+      <pointsMaterial size={0.025} color="#69fff1" transparent opacity={0.72} sizeAttenuation />
     </points>
   );
 }
 
-function CoreGeometry() {
+function CoreGeometry({ mobile, reduced }: { mobile: boolean; reduced: boolean }) {
   const mesh = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
-    if (!mesh.current) return;
+    if (reduced || !mesh.current) return;
     mesh.current.rotation.x += delta * 0.18;
     mesh.current.rotation.y += delta * 0.24;
     mesh.current.position.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.12;
   });
 
   return (
-    <Float speed={1.4} rotationIntensity={0.35} floatIntensity={0.45}>
+    <Float speed={1.4} rotationIntensity={0.35} floatIntensity={0.45} enabled={!reduced}>
       <mesh ref={mesh}>
         <icosahedronGeometry args={[1.35, 2]} />
         <MeshTransmissionMaterial
           backside
-          samples={8}
+          samples={mobile ? 4 : 6}
+          resolution={mobile ? 192 : 256}
+          backsideResolution={mobile ? 128 : 256}
           thickness={0.45}
           roughness={0.18}
           transmission={0.72}
@@ -89,8 +93,8 @@ function Scene({ mobile, reduced }: { mobile: boolean; reduced: boolean }) {
       <ambientLight intensity={0.25} />
       <directionalLight position={[4, 5, 4]} intensity={1.2} color="#8dfdf2" />
       <pointLight position={[-3, -1, 2]} intensity={1.5} color="#ff65cf" />
-      <ParticleField count={mobile ? 650 : 1400} />
-      <CoreGeometry />
+      <ParticleField count={mobile ? 650 : 1400} reduced={reduced} />
+      <CoreGeometry mobile={mobile} reduced={reduced} />
       <Stars radius={mobile ? 45 : 80} depth={28} count={mobile ? 800 : 1600} factor={3} fade speed={0.35} />
       <CameraRig reduced={reduced} />
       {!mobile && !reduced ? (
@@ -99,23 +103,32 @@ function Scene({ mobile, reduced }: { mobile: boolean; reduced: boolean }) {
           <Vignette darkness={0.42} eskil={false} />
         </EffectComposer>
       ) : null}
-      <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
     </>
   );
 }
 
 function HeroSceneComponent() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, { once: false });
   const mobile = useMediaQuery("(max-width: 768px)");
   const reduced = usePrefersReducedMotion();
 
+  // Render continuously only while the hero is on screen. When it scrolls out of
+  // view the loop stops entirely (no GPU/CPU cost). Reduced-motion users get a
+  // single static frame instead of a continuous animation.
+  const frameloop = reduced ? "demand" : inView ? "always" : "never";
+
   return (
-    <Canvas
-      dpr={mobile ? [1, 1.35] : [1, 1.8]}
-      camera={{ position: [0, 0, 5], fov: mobile ? 58 : 48 }}
-      gl={{ antialias: !mobile, powerPreference: "high-performance" }}
-    >
-      <Scene mobile={mobile} reduced={reduced} />
-    </Canvas>
+    <div ref={containerRef} className="h-full w-full">
+      <Canvas
+        frameloop={frameloop}
+        dpr={mobile ? [1, 1.35] : [1, 1.8]}
+        camera={{ position: [0, 0, 5], fov: mobile ? 58 : 48 }}
+        gl={{ antialias: !mobile }}
+      >
+        <Scene mobile={mobile} reduced={reduced} />
+      </Canvas>
+    </div>
   );
 }
 

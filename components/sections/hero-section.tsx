@@ -33,20 +33,23 @@ export function HeroSection() {
           className="border-primary/35 bg-primary/12 text-primary mb-4 inline-flex max-w-full items-center gap-2 rounded-2xl border px-3 py-2 text-xs font-medium sm:mb-5 sm:px-4 sm:text-sm"
         >
           <Sparkles className="size-4" />
-          <span className="truncate">Fresh front-end developer</span>
+          <span className="truncate">Front-End Developer · Available for work</span>
         </motion.div>
         <motion.h1
           variants={fadeUp}
           className="text-hero-title max-w-2xl text-[clamp(2rem,6vw,4.4rem)] leading-[1.08] font-semibold tracking-tight drop-shadow-[0_1px_14px_hsl(var(--card)/0.86)]"
         >
+          <span className="text-primary mb-2 block text-[clamp(1.1rem,2.6vw,1.6rem)] font-medium tracking-normal drop-shadow-none sm:mb-3">
+            Mutaz Alqaimary
+          </span>
           Crafting sleek React and Next.js interfaces for the modern web
         </motion.h1>
         <motion.p
           variants={fadeUp}
           className="text-foreground/78 mt-4 max-w-xl text-base leading-7 sm:mt-5 sm:text-lg sm:leading-8"
         >
-          I am a junior front-end developer focused on React, Next.js, TypeScript, responsive UI,
-          accessibility, and practical project-based learning
+          I build responsive, accessible web interfaces with React, Next.js, and TypeScript, with a
+          focus on clean architecture, motion, and performance.
         </motion.p>
         <motion.div
           variants={fadeUp}
