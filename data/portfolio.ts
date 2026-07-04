@@ -30,7 +30,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Styling & Animation",
-    items: ["Tailwind CSS", "Responsive Design", "Framer Motion", "GSAP", "Three.js / React Three Fiber"]
+    items: [
+      "Tailwind CSS",
+      "Responsive Design",
+      "Framer Motion",
+      "GSAP",
+      "Three.js / React Three Fiber"
+    ]
   },
   {
     title: "State Management",
@@ -38,7 +44,13 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Architecture & Performance",
-    items: ["Server & Client Components", "SSR / SSG / ISR", "Caching Strategies", "Forms & Zod Validation", "SEO"]
+    items: [
+      "Server & Client Components",
+      "SSR / SSG / ISR",
+      "Caching Strategies",
+      "Forms & Zod Validation",
+      "SEO"
+    ]
   },
   {
     title: "Tooling & Workflow",
@@ -48,26 +60,17 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
-    title: "Personal Portfolio",
-    slug: "personal-portfolio",
+    title: "Bayan",
+    slug: "bayan",
     description:
-      "Modern portfolio website showcasing projects, technical skills, and front-end development experience.",
+      "Educational reading platform that helps teachers manage students, assign reading activities, and track reading progress through analytics.",
     details:
-      "A personal portfolio built to present my work, highlight technical growth, and demonstrate modern front-end development practices. Features responsive layouts, interactive animations, dark mode support, and a 3D hero section designed to create an engaging user experience.",
-    image: "/assets/projects/portfolio.png",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Three.js",
-      "React Three Fiber",
-      "GSAP",
-      "Zod"
-    ],
-    github: "https://github.com/Mutaz-Alqaimary/Portfolio",
-    demo: "https://frontend-developer-portfolio-bice.vercel.app",
-    impact: "Personal portfolio and professional presence"
+      "A full-stack educational platform built with Next.js App Router, TypeScript, Supabase, and Tailwind CSS. Features authentication with role-based access control, student and teacher management, reading assignments, analytics dashboard, localization (Arabic/English), RTL support, accessibility improvements, performance optimization, and a scalable production-ready architecture.",
+    image: "/assets/projects/bayan.png",
+    stack: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "next-intl", "Zod"],
+    github: "https://github.com/Mutaz-Alqaimary/Bayan",
+    demo: "https://bayan-reading.vercel.app",
+    impact: "Reading management and analytics platform for schools"
   },
   {
     title: "Hotel Administration Dashboard",
@@ -112,6 +115,28 @@ export const projects: Project[] = [
     github: "https://github.com/Mutaz-Alqaimary/the-wild-oasis-website",
     demo: "https://the-wild-oasis-website-pi-sand.vercel.app",
     impact: "Online hotel reservation platform"
+  },
+  {
+    title: "Personal Portfolio",
+    slug: "personal-portfolio",
+    description:
+      "Modern portfolio website showcasing projects, technical skills, and front-end development experience.",
+    details:
+      "A personal portfolio built to present my work, highlight technical growth, and demonstrate modern front-end development practices. Features responsive layouts, interactive animations, dark mode support, and a 3D hero section designed to create an engaging user experience.",
+    image: "/assets/projects/portfolio.png",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Three.js",
+      "React Three Fiber",
+      "GSAP",
+      "Zod"
+    ],
+    github: "https://github.com/Mutaz-Alqaimary/Portfolio",
+    demo: "https://frontend-developer-portfolio-bice.vercel.app",
+    impact: "Personal portfolio and professional presence"
   }
 ];
 
